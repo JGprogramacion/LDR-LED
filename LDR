@@ -1,0 +1,23 @@
+int ldr = 0;
+int led = 2;
+
+void setup() {
+  pinMode(led,OUTPUT);                                      //led de prueba
+  pinMode(ldr,INPUT);                                        //pin de entrada
+  Serial.begin(9600);
+}
+
+void loop() {
+   int luz = analogRead(ldr);   //lectura señal de LDR
+  delay(500);
+  Serial.println(luz);
+
+  if(luz < 30){
+    digitalWrite(led, HIGH);
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+  }
+
+}
